@@ -26,12 +26,6 @@ It provides a simple, modern interface for managing projects using boards, tasks
 
 ---
 
-## 📸 Screenshots
-
-*(Add a few screenshots of the UI here once you have them)*
-
----
-
 ## 📦 Installation
 
 Clone the repo and install dependencies:
