@@ -1,0 +1,109 @@
+{
+    "projectId": "68befc8d003b1e8c8d93",
+    "endpoint": "https://nyc.cloud.appwrite.io/v1",
+    "projectName": "New project",
+    "settings": {
+        "services": {
+            "account": true,
+            "avatars": true,
+            "databases": true,
+            "locale": true,
+            "health": true,
+            "storage": true,
+            "teams": true,
+            "users": true,
+            "sites": true,
+            "functions": true,
+            "graphql": true,
+            "messaging": true
+        },
+        "auth": {
+            "methods": {
+                "jwt": true,
+                "phone": true,
+                "invites": true,
+                "anonymous": true,
+                "email-otp": true,
+                "magic-url": true,
+                "email-password": true
+            },
+            "security": {
+                "duration": 31536000,
+                "limit": 0,
+                "sessionsLimit": 10,
+                "passwordHistory": 0,
+                "passwordDictionary": false,
+                "personalDataCheck": false,
+                "sessionAlerts": false,
+                "mockNumbers": []
+            }
+        }
+    },
+    "tablesDB": [
+        {
+            "$id": "68befed100253d63d240",
+            "name": "sprintly",
+            "enabled": true
+        }
+    ],
+    "tables": [
+    {
+        "$id": "workspaces",
+        "$permissions": [],
+        "databaseId": "68befed100253d63d240",
+        "name": "workspaces",
+        "enabled": true,
+        "columns": [
+        { "key": "name", "type": "string", "required": true, "size": 255 },
+        { "key": "ownerId", "type": "string", "required": true, "size": 255 },
+        { "key": "createdAt", "type": "datetime", "required": true }
+        ],
+        "indexes": []
+    },
+    {
+        "$id": "members",
+        "$permissions": [],
+        "databaseId": "68befed100253d63d240",
+        "name": "members",
+        "enabled": true,
+        "columns": [
+        { "key": "workspaceId", "type": "string", "required": true, "size": 255 },
+        { "key": "userId", "type": "string", "required": true, "size": 255 },
+        { "key": "role", "type": "string", "required": true, "size": 50 }
+        ],
+        "indexes": []
+    },
+    {
+        "$id": "projects",
+        "$permissions": [],
+        "databaseId": "68befed100253d63d240",
+        "name": "projects",
+        "enabled": true,
+        "columns": [
+        { "key": "workspaceId", "type": "string", "required": true, "size": 255 },
+        { "key": "name", "type": "string", "required": true, "size": 255 },
+        { "key": "description", "type": "string", "required": false, "size": 1000 },
+        { "key": "createdAt", "type": "datetime", "required": true }
+        ],
+        "indexes": []
+    },
+    {
+        "$id": "tasks",
+        "$permissions": [],
+        "databaseId": "68befed100253d63d240",
+        "name": "tasks",
+        "enabled": true,
+        "columns": [
+        { "key": "projectId", "type": "string", "required": true, "size": 255 },
+        { "key": "title", "type": "string", "required": true, "size": 255 },
+        { "key": "description", "type": "string", "required": false, "size": 1000 },
+        { "key": "status", "type": "string", "required": true, "size": 50},
+        { "key": "assigneeId", "type": "string", "required": false, "size": 255 },
+        { "key": "createdAt", "type": "datetime", "required": true },
+        { "key": "updatedAt", "type": "datetime", "required": false }
+        ],
+        "indexes": []
+    }
+    ]
+
+}
